@@ -47,10 +47,13 @@ def bubble_sort(arr):
 """
 STRETCH: implement the Count Sort function below
 
+Known Understanding:
 Counting sort is a sorting algorithm that works on a set of data where
 we specifically know the maximum value that can exist in that set of
-data. The idea behind this algorithm then is that we can create "buckets"
-from 0 up to the max value. This is most easily done by initializing an
+data.
+The idea behind this algorithm then is that we can create "buckets"
+from 0 up to the max value.
+This is most easily done by initializing an
 array of 0s whose length is the max value + 1 (why do we need this "+ 1"?).
 
 Each buckets[i] then is responsible for keeping track of how many times
@@ -60,12 +63,26 @@ showed up, we can construct a sorted set of the input data from the
 buckets.
 
 What is the time and space complexity of the counting sort algorithm?
+
+This algorith is O(n + k) time complexity where n is the number of ellements in
+an array and k is the number of values you have to contain n elements.
 """
+# The first step is to count the number of occurences of each number in the
+#   array the result of these counts should be held in a list
+#
+# The second step is to cumutivly sum to the right and store that in an array
+#
+# The 3rd step is to take those sums and shif them to the right one time.
+# when the carray opperation occures it shouldn't carray the far right value.
+#
+# The final step is to iteritivly build the list of numbers to legth n from the
+# k tabel.
 
 
 def counting_sort(arr, maximum=None):
-    # Your code here
-
+    occurances = {}
+    for i in arr:
+        occurances[i] += 1
     return arr
 
 
